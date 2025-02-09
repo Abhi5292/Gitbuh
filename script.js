@@ -1,60 +1,21 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Handle Page Transitions
-    function showSection(sectionId) {
-        document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
-        document.getElementById(sectionId).classList.add("active");
-    }
-
-    // Navigation Click Events
-    document.querySelectorAll(".nav-button").forEach(button => {
-        button.addEventListener("click", function() {
-            let sectionId = this.getAttribute("data-section");
-            showSection(sectionId);
-        });
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // Spin Wheel Functionality
+    const spinBtn = document.getElementById("spin-btn");
+    spinBtn.addEventListener("click", () => {
+        spinBtn.innerText = "Spinning...";
+        setTimeout(() => {
+            let rewards = ["150 Coins", "200 Coins", "1 MetaVerse Token", "5 MetaVerse Tokens"];
+            let reward = rewards[Math.floor(Math.random() * rewards.length)];
+            alert("You won: " + reward);
+            spinBtn.innerText = "SPIN";
+        }, 3000);
     });
 
-    // Wallet Conversion (100 Coins -> 1 Token)
-    document.getElementById("convert").addEventListener("click", function() {
-        let coins = parseInt(document.getElementById("coins").textContent);
-        let tokens = parseInt(document.getElementById("tokens").textContent);
-        if (coins >= 100) {
-            document.getElementById("coins").textContent = coins - 100;
-            document.getElementById("tokens").textContent = tokens + 1;
-        }
+    // Wallet Conversion Functionality
+    const convertBtn = document.getElementById("convert-btn");
+    convertBtn.addEventListener("click", () => {
+        alert("Conversion Successful: 100 MetaRush Coins = 1 MetaVerse Token");
     });
 
-    // Spin Wheel Logic
-    document.getElementById("spin").addEventListener("click", function() {
-        let rewards = [150, 200, 300, 500, 1000, 1500, 10, 15];
-        let reward = rewards[Math.floor(Math.random() * rewards.length)];
-        document.getElementById("spin-result").textContent = "You won: " + reward + (reward >= 100 ? " Coins" : " Tokens");
-    });
-
-    // Daily Bonus Logic
-    let lastClaimDate = localStorage.getItem("lastClaimDate");
-    let currentBonus = parseInt(localStorage.getItem("currentBonus")) || 200;
-    let today = new Date().toDateString();
-    let bonusDisplay = document.getElementById("bonus-amount");
-    let claimButton = document.getElementById("claim-bonus");
-    let bonusStatus = document.getElementById("bonus-status");
-
-    if (lastClaimDate === today) {
-        claimButton.disabled = true;
-        bonusStatus.textContent = "Bonus already claimed today!";
-    } else {
-        claimButton.disabled = false;
-    }
-
-    bonusDisplay.textContent = currentBonus;
-
-    claimButton.addEventListener("click", function() {
-        let coins = parseInt(document.getElementById("coins").textContent);
-        coins += currentBonus;
-        document.getElementById("coins").textContent = coins;
-
-        localStorage.setItem("lastClaimDate", today);
-        localStorage.setItem("currentBonus", currentBonus * 2 > 3200 ? 200 : currentBonus * 2);
-        claimButton.disabled = true;
-        bonusStatus.textContent = "Bonus Claimed!";
-    });
 });
