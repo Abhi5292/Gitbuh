@@ -1,0 +1,72 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.nav-button {
+    padding: 10px;
+    background: purple;
+    color: white;
+    cursor: pointer;
+}
+
+/* Sections Display */
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+/* Smooth Page Transitions */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cyberpunk Neon Effects */
+button {
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    border: none;
+    padding: 12px 18px;
+    font-size: 16px;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-shadow: 0 0 5px white;
+}
+
+button:hover {
+    box-shadow: 0 0 20px #ff00ff;
+    transform: scale(1.05);
+}
+
+/* Cyberpunk Flickering Effect */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+}
+
+h2 {
+    animation: flicker 1.5s infinite alternate;
+}
