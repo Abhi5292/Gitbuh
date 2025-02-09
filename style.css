@@ -89,3 +89,88 @@ header {
     padding: 10px;
     border-radius: 5px;
 }
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    background: #010101;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+/* Flash Screen Animation */
+#flash-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* Sections */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background: #111;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px cyan;
+}
+
+.wallet, .spin-wheel, .leaderboard {
+    background: #222;
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px cyan;
+}
+
+/* Spin Wheel */
+.spin-wheel img {
+    width: 200px;
+    transition: transform 3s ease-out;
+}
+
+/* Buttons */
+button {
+    background: linear-gradient(45deg, #ff0099, #00ffcc);
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+button:hover {
+    box-shadow: 0 0 20px cyan;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background: #111;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px cyan;
+}
+
+.bottom-nav button {
+    border: 1px solid #0ff;
+}
