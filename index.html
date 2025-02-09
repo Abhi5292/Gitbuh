@@ -3,57 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MetaRush Cyberpunk</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cyberpunk Game UI</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Flash Screen Before App Opens -->
+
+    <!-- Flash Screen (Before UI Loads) -->
     <div id="flash-screen">
-        <img src="flashscreen.jpg" alt="Cyberpunk Flash Screen">
+        <img src="cyberpunk_intro.png" alt="Game Intro">
     </div>
 
-    <!-- Navigation Menu -->
-    <nav>
-        <button class="nav-button" data-section="wallet">Wallet</button>
-        <button class="nav-button" data-section="spin-wheel">Spin Wheel</button>
-        <button class="nav-button" data-section="daily-bonus">Daily Bonus</button>
-        <button class="nav-button" data-section="leaderboard">Leaderboard</button>
-    </nav>
+    <!-- Main UI -->
+    <div class="container">
+        
+        <!-- Top Section: Games & Daily Bonus -->
+        <header>
+            <h1>GAMES</h1>
+            <div class="daily-bonus">
+                <h2>DAILY LOGIN BONUS</h2>
+                <p>200 Coins</p>
+            </div>
+        </header>
 
-    <!-- Wallet Section -->
-    <section id="wallet" class="active">
-        <h2>Wallet</h2>
-        <p>Coins: <span id="coins">1000</span></p>
-        <p>Tokens: <span id="tokens">10</span></p>
-        <button id="convert">Convert 100 Coins to 1 Token</button>
-    </section>
+        <!-- Wallet Section -->
+        <section class="wallet">
+            <h2>Wallet Games</h2>
+            <div class="wallet-items">
+                <div class="wallet-item">MetaRush Coins</div>
+                <div class="wallet-item">MetaVerse Tokens</div>
+                <button id="convert-btn">Convert</button>
+            </div>
+        </section>
 
-    <!-- Spin Wheel Section -->
-    <section id="spin-wheel">
-        <h2>Spin Wheel</h2>
-        <div id="wheel-container">
-            <button id="spin">Spin</button>
-        </div>
-        <p id="spin-result"></p>
-    </section>
+        <!-- Spin Wheel Section -->
+        <section class="spin-wheel">
+            <h2>Spin Wheel</h2>
+            <div id="wheel">
+                <img src="spin_wheel.png" alt="Spin Wheel">
+            </div>
+            <button id="spin-btn">SPIN</button>
+        </section>
 
-    <!-- Daily Bonus Section -->
-    <section id="daily-bonus">
-        <h2>Daily Login Bonus</h2>
-        <p>Today's Bonus: <span id="bonus-amount">200</span> Coins</p>
-        <button id="claim-bonus">Claim Bonus</button>
-        <p id="bonus-status"></p>
-    </section>
+        <!-- Leaderboard Section -->
+        <section class="leaderboard">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list">
+                <li>Player1 - 5000 Points</li>
+                <li>Player2 - 4500 Points</li>
+                <li>Player3 - 4000 Points</li>
+            </ul>
+        </section>
 
-    <!-- Leaderboard Section -->
-    <section id="leaderboard">
-        <h2>Leaderboard</h2>
-        <ul id="leaderboard-list">
-            <li>Player1 - 5000 Coins</li>
-            <li>Player2 - 4500 Coins</li>
-            <li>Player3 - 4000 Coins</li>
-        </ul>
-    </section>
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button>Home</button>
+            <button>Wallet</button>
+            <button>Spin</button>
+            <button>Leaderboard</button>
+        </nav>
+
+    </div>
 
     <script src="script.js"></script>
 </body>
