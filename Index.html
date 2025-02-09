@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaRush Cyberpunk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Flash Screen Before App Opens -->
+    <div id="flash-screen">
+        <img src="flashscreen.jpg" alt="Cyberpunk Flash Screen">
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <button class="nav-button" data-section="wallet">Wallet</button>
+        <button class="nav-button" data-section="spin-wheel">Spin Wheel</button>
+        <button class="nav-button" data-section="daily-bonus">Daily Bonus</button>
+        <button class="nav-button" data-section="leaderboard">Leaderboard</button>
+    </nav>
+
+    <!-- Wallet Section -->
+    <section id="wallet" class="active">
+        <h2>Wallet</h2>
+        <p>Coins: <span id="coins">1000</span></p>
+        <p>Tokens: <span id="tokens">10</span></p>
+        <button id="convert">Convert 100 Coins to 1 Token</button>
+    </section>
+
+    <!-- Spin Wheel Section -->
+    <section id="spin-wheel">
+        <h2>Spin Wheel</h2>
+        <div id="wheel-container">
+            <button id="spin">Spin</button>
+        </div>
+        <p id="spin-result"></p>
+    </section>
+
+    <!-- Daily Bonus Section -->
+    <section id="daily-bonus">
+        <h2>Daily Login Bonus</h2>
+        <p>Today's Bonus: <span id="bonus-amount">200</span> Coins</p>
+        <button id="claim-bonus">Claim Bonus</button>
+        <p id="bonus-status"></p>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard">
+        <h2>Leaderboard</h2>
+        <ul id="leaderboard-list">
+            <li>Player1 - 5000 Coins</li>
+            <li>Player2 - 4500 Coins</li>
+            <li>Player3 - 4000 Coins</li>
+        </ul>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
